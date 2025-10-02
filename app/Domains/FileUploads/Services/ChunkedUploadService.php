@@ -100,7 +100,7 @@ class ChunkedUploadService
     {
         try {
             $tempPath = $this->tempDir.'/'.$upload->uuid;
-            $finalFilename = $upload->uuid.'_'.$upload->original_filename;
+            $finalFilename = $upload->uuid.'_'.$this->sanitizeFilename($upload->original_filename);
             $finalPath = $this->finalDir.'/'.$finalFilename;
 
             // Create temporary file to assemble chunks
@@ -253,5 +253,27 @@ class ChunkedUploadService
             'image/gif',
             'image/webp',
         ]);
+    }
+
+    /**
+     * Sanitize filename by removing query parameters and invalid characters
+     */
+    protected function sanitizeFilename(string $filename): string
+    {
+        // Remove query parameters (everything after ?)
+        $filename = explode('?', $filename)[0];
+
+        // Remove any URL fragments (everything after #)
+        $filename = explode('#', $filename)[0];
+
+        // Remove or replace invalid characters for filesystem
+        $filename = preg_replace('/[^a-zA-Z0-9\-_\.]/', '_', $filename);
+
+        // Ensure we have an extension
+        if (!pathinfo($filename, PATHINFO_EXTENSION)) {
+            $filename .= '.jpg'; // Default to jpg if no extension
+        }
+
+        return $filename;
     }
 }
