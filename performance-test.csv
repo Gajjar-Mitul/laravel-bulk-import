@@ -1,0 +1,11 @@
+sku,name,description,price,stock_quantity,category,is_active
+PERF001,Performance Product 1,Test description,19.99,100,Electronics,true
+PERF002,Performance Product 2,Test description,29.99,50,Books,false
+PERF003,Performance Product 3,Test description,39.99,75,Home,true
+PERF004,Performance Product 4,Test description,49.99,25,Sports,true
+PERF005,Performance Product 5,Test description,59.99,10,Toys,false
+PERF006,Performance Product 6,Test description,69.99,5,Garden,true
+PERF007,Performance Product 7,Test description,79.99,15,Kitchen,false
+PERF008,Performance Product 8,Test description,89.99,20,Office,true
+PERF009,Performance Product 9,Test description,99.99,30,Fashion,true
+PERF010,Performance Product 10,Test description,109.99,40,Health,false

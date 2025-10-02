@@ -1,0 +1,4 @@
+sku,name,description,price,stock_quantity,category,is_active
+SKU001,"Product 1","Test description 1",19.99,100,Electronics,true
+SKU002,"Product 2","Test description 2",29.99,50,Books,false
+SKU003,"Product 3","Test description 3",39.99,75,Home,true

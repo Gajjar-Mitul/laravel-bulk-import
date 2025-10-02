@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+
+        Schema::create('uploads', function (Blueprint $table): void {
+            $table->id();
+            $table->string('filename');
+            $table->string('original_filename');
+            $table->bigInteger('total_size');
+            $table->integer('total_chunks');
+            $table->string('checksum');
+            $table->enum('status', ['pending', 'uploading', 'completed', 'failed'])->default('pending');
+            $table->string('upload_path')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('uploads');
+    }
+};

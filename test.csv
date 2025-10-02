@@ -1,0 +1,2 @@
+sku,name,description,price,stock_quantity,category,is_active
+TEST001,"Test Product","Description",19.99,100,Electronics,true

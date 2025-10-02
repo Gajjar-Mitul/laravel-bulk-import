@@ -1,0 +1,3 @@
+sku,name,description,price,stock_quantity,category,is_active
+TEST001,Small Test Product 1,Test description,19.99,100,Electronics,true
+TEST002,Small Test Product 2,Test description,29.99,50,Books,false
